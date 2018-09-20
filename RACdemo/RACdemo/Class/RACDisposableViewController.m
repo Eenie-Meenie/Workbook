@@ -27,6 +27,9 @@
      2.信号发送失败; 
     */
     
+    
+    // 测试测试测试
+    
 //    @weakify(self);
     RACSignal *single = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
