@@ -20,6 +20,7 @@
 		5393922321534B2A0055A838 /* NSObject+Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 5393922221534B2A0055A838 /* NSObject+Sum.m */; };
 		5393922621534BAD0055A838 /* SumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5393922521534BAD0055A838 /* SumManager.m */; };
 		5393922921534E910055A838 /* ChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5393922821534E910055A838 /* ChainViewController.m */; };
+		5393922C215387510055A838 /* RACsubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5393922B215387510055A838 /* RACsubjectViewController.m */; };
 		53E4330D21524ADD00415A8F /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4330C21524ADD00415A8F /* MVVMViewController.m */; };
 		C194C55CE4EAC18FA6766A09 /* Pods_RACdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FC46484C53AA08EE4BDC81 /* Pods_RACdemo.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,8 @@
 		5393922521534BAD0055A838 /* SumManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SumManager.m; sourceTree = "<group>"; };
 		5393922721534E910055A838 /* ChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainViewController.h; sourceTree = "<group>"; };
 		5393922821534E910055A838 /* ChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChainViewController.m; sourceTree = "<group>"; };
+		5393922A215387510055A838 /* RACsubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RACsubjectViewController.h; path = "../../../../练习Demo/RACdemo/RACdemo/Class/RACsubjectViewController.h"; sourceTree = "<group>"; };
+		5393922B215387510055A838 /* RACsubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RACsubjectViewController.m; path = "../../../../练习Demo/RACdemo/RACdemo/Class/RACsubjectViewController.m"; sourceTree = "<group>"; };
 		53E4330B21524ADD00415A8F /* MVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMViewController.h; sourceTree = "<group>"; };
 		53E4330C21524ADD00415A8F /* MVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMViewController.m; sourceTree = "<group>"; };
 		E790319B0314226E59465510 /* Pods-RACdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACdemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACdemo/Pods-RACdemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				5310124420E5E8C1001936F6 /* AppDelegate.m */,
 				534460392142472A00CFD2F8 /* MainViewController.h */,
 				5344603A2142472A00CFD2F8 /* MainViewController.m */,
+				5393922A215387510055A838 /* RACsubjectViewController.h */,
+				5393922B215387510055A838 /* RACsubjectViewController.m */,
 				53553DF12150F6DC00930198 /* TabBarSecondViewController.h */,
 				53553DF22150F6DC00930198 /* TabBarSecondViewController.m */,
 				53553DF4215107C900930198 /* RACDisposableViewController.h */,
@@ -400,6 +405,7 @@
 				5310125320E5E8C1001936F6 /* main.m in Sources */,
 				5344603B2142472A00CFD2F8 /* MainViewController.m in Sources */,
 				5393922921534E910055A838 /* ChainViewController.m in Sources */,
+				5393922C215387510055A838 /* RACsubjectViewController.m in Sources */,
 				53553DF6215107C900930198 /* RACDisposableViewController.m in Sources */,
 				53553DF32150F6DC00930198 /* TabBarSecondViewController.m in Sources */,
 				53E4330D21524ADD00415A8F /* MVVMViewController.m in Sources */,

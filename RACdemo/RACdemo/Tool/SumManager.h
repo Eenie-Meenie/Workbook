@@ -19,6 +19,9 @@ typedef SumManager *(^sum)(int value);
 /** 计算结果 */
 @property (nonatomic, assign) int result;
 
+/** <#注释#> */
+@property (nonatomic, assign) int newResult;
+
 /** 加法运算 */
 // 返回值:为sumManager
 // value:参数
@@ -30,6 +33,9 @@ typedef SumManager *(^sum)(int value);
 
 /** <#注释#> */
 @property (nonatomic, copy) sum sumb;
+
+/** 定义方法 */
+- (instancetype)manager:(int(^)(int result))sumBlcok;
 
 
 @end

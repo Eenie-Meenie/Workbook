@@ -20,15 +20,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(handleAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    button.backgroundColor = [UIColor redColor];
+    button.frame = CGRectMake(100, 100, 100, 50);
+    
+    
     /*
      RACDispoable:帮助我们取消订阅用的
      什么时候需要取消订阅?
      1.信号发送完毕;
      2.信号发送失败; 
     */
-    
-    
-    // 测试测试测试
     
 //    @weakify(self);
     RACSignal *single = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
@@ -57,11 +65,25 @@
     // 手动取消订阅?
     
     [disposable dispose];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)handleAction:(UIButton *)sender {
+    self.navigationItem.title = @"思考好看";
+    
+    [self laile:@"come on"];
+}
+
+- (void)laile:(NSString *)str {
+    
 }
 
 /*

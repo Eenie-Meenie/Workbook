@@ -42,7 +42,7 @@
     
     ChainViewController *chainVC = [[ChainViewController alloc] init];
     UINavigationController *naVC4 = [[UINavigationController alloc] initWithRootViewController:chainVC];
-    chainVC.title = @"链式变成";
+    chainVC.title = @"链式编程";
     
      tabBarVC.viewControllers = @[navc1, navc2, navc3, naVC4];
     self.window.rootViewController = tabBarVC;

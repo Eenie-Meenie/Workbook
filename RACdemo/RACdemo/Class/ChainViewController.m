@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    /** 链式编程 */
     int result = [NSObject HB_makeSub:^(SumManager *manager) {
         
     manager.add(10).add(20).add(20).addsumValue(20).addsumValue(30);
@@ -28,6 +29,17 @@
     
     NSLog(@"%d", result);
     
+    /** 函数编程 */
+    SumManager *mgr = [[SumManager alloc] init];
+    
+    int res = [[mgr manager:^int(int result) {
+        result += 10;
+        result *= 2;
+        return result;
+    }] result];
+    
+    
+    NSLog(@"%d", res);
 }
 
 - (void)didReceiveMemoryWarning {

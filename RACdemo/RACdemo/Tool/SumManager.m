@@ -47,6 +47,13 @@
 //        _result += value;
 //        return self;
 //    };
+    
+}
+
+/** 计算结果 */
+- (instancetype)manager:(int(^)(int result))sumBlcok {
+    _newResult = sumBlcok(_newResult);
+    return self;
 }
 
 @end

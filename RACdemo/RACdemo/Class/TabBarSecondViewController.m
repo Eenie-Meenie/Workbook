@@ -18,6 +18,60 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 元祖
+    RACTuple *tuple = [RACTuple tupleWithObjectsFromArray:@[@"aaa", @"bbb", @"ccc"]];
+    
+    NSString *str = tuple[0];
+    
+    NSLog(@"%@", str);
+    NSLog(@"%@", tuple);
+    
+    
+    // RACSequence 用于代替NSArray, NSDictionary 可以使用快速遍历
+    // 数据解析 最常见应用场景:字典转模型
+    
+    NSArray *array = @[@"111",@"222",@"333",@"444",@"555",@"666"];
+    
+    /*
+    RACSequence *requence = [array rac_sequence];
+    
+    RACSignal *single1 = [requence signal];
+    
+    [single1 subscribeNext:^(id  _Nullable x) {
+        NSLog(@"---%@---",x);
+    }];
+     */
+    [array.rac_sequence.signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    
+    NSDictionary *dict = @{@"name":@"CC", @"age":@"18"};
+    
+    // 字典转集合
+    // 遍历字典
+//    [dict.rac_sequence.signal subscribeNext:^(RACTuple *x) {
+//        NSLog(@"%@", x);
+//
+////        NSString *key = x[0];     // 字典的key
+////        NSString *value = x[1];   // 字典的value
+////
+////        NSLog(@"key:%@ -- value:%@", key,value);
+//
+//        // 解析元祖 : RACTuplePack(<#...#>)
+//
+//        RACTuplePack(NSString *key, NSString *value) = x;
+//
+//        NSLog(@"%@:%@", key,value);
+//
+//    }];
+//
+    
+    
+ 
+
+    
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"按钮" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(handleAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -65,6 +119,12 @@
 #pragma mark - handle action
 - (void)handleAction:(UIButton *)sedner {
     RACDisposableViewController *secondVC = [[RACDisposableViewController alloc] init];
+    
+    [[secondVC rac_signalForSelector:@selector(laile:)] subscribeNext:^(RACTuple * _Nullable x) {
+        NSLog(@"%@", x);
+        
+    }];
+    
     [self.navigationController pushViewController:secondVC animated:YES];
 }
 @end
