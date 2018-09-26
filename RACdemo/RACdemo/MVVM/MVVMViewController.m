@@ -8,13 +8,22 @@
 
 
 #import "MVVMViewController.h"
-
+#import "MVVMPaper.h"
+#import "MVVMViewModel.h" 
+#import "MVVMView.h"
 
 typedef void(^HHBlock)(id data);
 @interface MVVMViewController ()
 
 /** <#注释#> */
 @property (nonatomic, copy) HHBlock block;
+
+/** <#注释#> */
+@property (nonatomic, strong) MVVMPaper *paper;
+/** <#注释#> */
+@property (nonatomic, strong) MVVMViewModel *viewModel;
+/**  */
+@property (nonatomic, strong) MVVMView *mvvmView;
 
 @end
 
@@ -23,14 +32,38 @@ typedef void(^HHBlock)(id data);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor cyanColor];
     
+//    [self creatMasonryView];
+    
+    self.paper = [MVVMPaper new];
+    
+    _paper.content = @"line 0";
+    
+    self.viewModel = [MVVMViewModel new];
+    
+    self.mvvmView = [MVVMView new];
+    
+    _mvvmView.frame = self.view.bounds;
+   
+    [self.view addSubview:self.mvvmView];
+    
+    [_mvvmView setWithViewModel:_viewModel];
+    [_viewModel setWithModel:_paper];
+   
+    // Do any additional setup after loading the view.
+    
+}
+
+/** 平分创建4个view */
+- (void)creatMasonryView {
     UIView *redView = [[UIView alloc] init];
     redView.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:redView];
     
     [redView makeConstraints:^(MASConstraintMaker *make) {
-         make.top.left.equalTo(10);
+        make.top.left.equalTo(10);
         make.bottom.right.equalTo(-10);
     }];
     
@@ -51,10 +84,6 @@ typedef void(^HHBlock)(id data);
     }];
     
     [self loadData];
-    
-   
-    // Do any additional setup after loading the view.
-    
 }
 
 - (void)loadData {
