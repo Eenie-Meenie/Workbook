@@ -14,12 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - IQKeyboardManager (6.0.4)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - IQKeyboardManager (~> 6.0.4)
   - Masonry
   - MJExtension (~> 3.0.13)
   - ReactiveObjC (~> 3.1.0)
@@ -27,16 +29,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - IQKeyboardManager
     - Masonry
     - MJExtension
     - ReactiveObjC
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 
-PODFILE CHECKSUM: fa7b7c87e9c6fb10f0b3b1caeda9d76a42472984
+PODFILE CHECKSUM: 001a8cc1804d0113ffdd1d9553e7006799c837bf
 
 COCOAPODS: 1.5.3
