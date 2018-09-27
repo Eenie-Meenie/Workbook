@@ -50,6 +50,7 @@ typedef void(^HHBlock)(id data);
     
     [_mvvmView setWithViewModel:_viewModel];
     [_viewModel setWithModel:_paper];
+    
    
     // Do any additional setup after loading the view.
     

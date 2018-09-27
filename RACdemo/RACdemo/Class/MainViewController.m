@@ -37,6 +37,15 @@
     [super viewDidLoad];
 //    self.navigationItem.title = @"RAC";
     
+//    NSDictionary *dic = @{@"adb":@"和斯科拉里"};
+//
+//    NSString *str = [dic mj_JSONString];
+//
+//    // 写入文件到电脑上
+//    [dic writeToFile:@"/Users/hanbo/Desktop/项目切图/ceshi.plist"atomically:YES];
+//
+//    [str writeToFile:@"/Users/hanbo/Desktop/项目切图/c123.json" atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
     // RAC代替KVO
     [self.view rac_observeKeyPath:@"frame" options:NSKeyValueObservingOptionNew observer:nil block:^(id value, NSDictionary *change, BOOL causedByDealloc, BOOL affectedOnlyLastComponent) {
         NSLog(@"======%@", change);
@@ -52,14 +61,14 @@
     }];
     
    
-    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 40)];
-    tf.placeholder = @"sjljf";
-    [self.view addSubview:tf];
+//    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 40)];
+//    tf.placeholder = @"sjljf";
+//    [self.view addSubview:tf];
     
-    /** 键盘监听事件 */
-    [tf.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
-        NSLog(@"%@", x);
-    }];
+//    /** 键盘监听事件 */
+//    [tf.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+//        NSLog(@"%@", x);
+//    }];
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

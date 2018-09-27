@@ -59,13 +59,16 @@
     
     self.viewModel = vm;
     
-    // RAC代替KVO
+    // 绑定
+    // 
+//    RAC(_lbContent,text) = RACObserve(self.viewModel, contentStr);
+    
+    
+   //  RAC代替KVO
     [[self.viewModel rac_valuesForKeyPath:@"contentStr" observer:self] subscribeNext:^(id  _Nullable x) {
         NSLog(@"==%@", x);
            _lbContent.text = x;
     }];
-    
-//    [self addObserver:vm forKeyPath:@"contentStr" options: NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
 }
 
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {

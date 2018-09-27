@@ -55,22 +55,82 @@
         NSLog(@"按钮点击");
     }];
     
-    /** 组合信号 */
-    RACSignal *enbleSignal = [[RACSignal combineLatest:@[self.userTF.rac_textSignal, self.passWardTF.rac_textSignal]] map:^id _Nullable(RACTuple * _Nullable value) {
-        
-        // 账号输入框有文字,密码文字大于6
-        return @([value[0] length] > 0 && [value[1] length] > 6);
+    // 过滤 -- 满足某些条件时候,才会获取信号
+    [[_userTF.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        return value.length > 5;
+        // 返回值就是过滤的条件,只有满足这个条件才能获取到内容
+    }] subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"---%@---", x);
     }];
     
-    [enbleSignal subscribeNext:^(id  _Nullable x) {
-        
-        BOOL isX = [x boolValue];
-        if (isX) {
-            self.loginBtn.backgroundColor = [UIColor redColor];
-        } else {
-            self.loginBtn.backgroundColor = [UIColor blackColor];
-        }
+    // ignore: 忽略一些值
+    // ignoreValue: 忽略所有值
+    RACSubject *subject = [RACSubject subject];
+    
+    RACSignal *ignoreSignal = [subject ignore:@"1"];
+    
+    [ignoreSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@",x);
     }];
+
+    [subject sendNext:@"1"];
+    
+    // take 获取多少次信号
+    // 只获取一次信号.
+    // tabkLast:取后面多少个值.必须要有发送完成
+    // takeUntill: 只要传入信号发送完成或者发送任意数据,就不会再接收信号源
+    //
+    [[subject take:1] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"");
+    }];
+    
+    // skip 跳跃几个信号获取
+
+
+    
+    /** 组合信号 */
+//    RACSignal *enbleSignal = [[RACSignal combineLatest:@[self.userTF.rac_textSignal, self.passWardTF.rac_textSignal]] map:^id _Nullable(RACTuple * _Nullable value) {
+//
+//        // 账号输入框有文字,密码文字大于6
+//        return @([value[0] length] > 0 && [value[1] length] > 6);
+//    }];
+    
+    
+    // reduceBlcok参数:跟组合的信号有关, 一一对应
+    [[RACSignal combineLatest:@[self.userTF.rac_textSignal, self.passWardTF.rac_textSignal] reduce:^id(NSString *account, NSString *pwd){
+        
+//        NSLog(@"%@ -- %@", account, pwd);
+        
+        
+        if ((account.length && pwd.length > 6)) {
+            return [UIColor redColor];
+        } else {
+            return [UIColor blackColor];
+        }
+        
+//        return @"23";
+    }] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@", x);
+//        _loginBtn.enabled = [x boolValue];
+//        BOOL isX = [x boolValue];
+//        if (isX) {
+//            self.loginBtn.backgroundColor = [UIColor redColor];
+//        } else {
+//            self.loginBtn.backgroundColor = [UIColor blackColor];
+//        }
+        self.loginBtn.backgroundColor = x;
+    }];
+
+    
+//    [enbleSignal subscribeNext:^(id  _Nullable x) {
+//
+//        BOOL isX = [x boolValue];
+//        if (isX) {
+//            self.loginBtn.backgroundColor = [UIColor redColor];
+//        } else {
+//            self.loginBtn.backgroundColor = [UIColor blackColor];
+//        }
+//    }];
     
 //    self.loginBtn.rac_command = [[RACCommand alloc] initWithEnabled:enbleSignal signalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
 //        return [RACSignal empty];
@@ -108,7 +168,7 @@
     }];
     
     
-    NSDictionary *dict = @{@"name":@"CC", @"age":@"18"};
+//    NSDictionary *dict = @{@"name":@"CC", @"age":@"18"};
     
     // 字典转集合
     // 遍历字典

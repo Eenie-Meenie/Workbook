@@ -13,6 +13,9 @@
 		5310125320E5E8C1001936F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5310125220E5E8C1001936F6 /* main.m */; };
 		5310125D20E5E8C1001936F6 /* RACdemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5310125C20E5E8C1001936F6 /* RACdemoTests.m */; };
 		5310126820E5E8C1001936F6 /* RACdemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5310126720E5E8C1001936F6 /* RACdemoUITests.m */; };
+		5344533E215A0A1900C7C841 /* MVVMPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344533D215A0A1900C7C841 /* MVVMPaper.m */; };
+		53445341215A0A2A00C7C841 /* MVVMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53445340215A0A2A00C7C841 /* MVVMView.m */; };
+		53445344215A0A3900C7C841 /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53445343215A0A3900C7C841 /* MVVMViewModel.m */; };
 		5344603B2142472A00CFD2F8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344603A2142472A00CFD2F8 /* MainViewController.m */; };
 		53553DF32150F6DC00930198 /* TabBarSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53553DF22150F6DC00930198 /* TabBarSecondViewController.m */; };
 		53553DF6215107C900930198 /* RACDisposableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53553DF5215107C900930198 /* RACDisposableViewController.m */; };
@@ -58,6 +61,12 @@
 		5310126320E5E8C1001936F6 /* RACdemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RACdemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5310126720E5E8C1001936F6 /* RACdemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACdemoUITests.m; sourceTree = "<group>"; };
 		5310126920E5E8C1001936F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5344533C215A0A1900C7C841 /* MVVMPaper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMPaper.h; sourceTree = "<group>"; };
+		5344533D215A0A1900C7C841 /* MVVMPaper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMPaper.m; sourceTree = "<group>"; };
+		5344533F215A0A2A00C7C841 /* MVVMView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMView.h; sourceTree = "<group>"; };
+		53445340215A0A2A00C7C841 /* MVVMView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMView.m; sourceTree = "<group>"; };
+		53445342215A0A3900C7C841 /* MVVMViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMViewModel.h; sourceTree = "<group>"; };
+		53445343215A0A3900C7C841 /* MVVMViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMViewModel.m; sourceTree = "<group>"; };
 		534460392142472A00CFD2F8 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		5344603A2142472A00CFD2F8 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		53553DF12150F6DC00930198 /* TabBarSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarSecondViewController.h; sourceTree = "<group>"; };
@@ -134,6 +143,7 @@
 			children = (
 				5393922021534AFE0055A838 /* Tool */,
 				5393921F21534A070055A838 /* Class */,
+				53445338215A099600C7C841 /* MVVM */,
 				5387ACB221425D4700999B9E /* Supporting Files */,
 			);
 			path = RACdemo;
@@ -155,6 +165,45 @@
 				5310126920E5E8C1001936F6 /* Info.plist */,
 			);
 			path = RACdemoUITests;
+			sourceTree = "<group>";
+		};
+		53445338215A099600C7C841 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				53E4330B21524ADD00415A8F /* MVVMViewController.h */,
+				53E4330C21524ADD00415A8F /* MVVMViewController.m */,
+				53445339215A09DC00C7C841 /* Model */,
+				5344533A215A09E600C7C841 /* ViewModel */,
+				5344533B215A09F700C7C841 /* View */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		53445339215A09DC00C7C841 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5344533C215A0A1900C7C841 /* MVVMPaper.h */,
+				5344533D215A0A1900C7C841 /* MVVMPaper.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5344533A215A09E600C7C841 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53445342215A0A3900C7C841 /* MVVMViewModel.h */,
+				53445343215A0A3900C7C841 /* MVVMViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5344533B215A09F700C7C841 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5344533F215A0A2A00C7C841 /* MVVMView.h */,
+				53445340215A0A2A00C7C841 /* MVVMView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5387ACB221425D4700999B9E /* Supporting Files */ = {
@@ -185,8 +234,6 @@
 				53553DF5215107C900930198 /* RACDisposableViewController.m */,
 				5387ACB52142663900999B9E /* SecondViewController.h */,
 				5387ACB62142663900999B9E /* SecondViewController.m */,
-				53E4330B21524ADD00415A8F /* MVVMViewController.h */,
-				53E4330C21524ADD00415A8F /* MVVMViewController.m */,
 				5393922721534E910055A838 /* ChainViewController.h */,
 				5393922821534E910055A838 /* ChainViewController.m */,
 			);
@@ -400,7 +447,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53445344215A0A3900C7C841 /* MVVMViewModel.m in Sources */,
 				5387ACB72142663900999B9E /* SecondViewController.m in Sources */,
+				53445341215A0A2A00C7C841 /* MVVMView.m in Sources */,
 				5393922321534B2A0055A838 /* NSObject+Sum.m in Sources */,
 				5310125320E5E8C1001936F6 /* main.m in Sources */,
 				5344603B2142472A00CFD2F8 /* MainViewController.m in Sources */,
@@ -408,6 +457,7 @@
 				5393922C215387510055A838 /* RACsubjectViewController.m in Sources */,
 				53553DF6215107C900930198 /* RACDisposableViewController.m in Sources */,
 				53553DF32150F6DC00930198 /* TabBarSecondViewController.m in Sources */,
+				5344533E215A0A1900C7C841 /* MVVMPaper.m in Sources */,
 				53E4330D21524ADD00415A8F /* MVVMViewController.m in Sources */,
 				5393922621534BAD0055A838 /* SumManager.m in Sources */,
 				5310124520E5E8C1001936F6 /* AppDelegate.m in Sources */,

@@ -11,6 +11,7 @@
 @interface SecondViewController : UIViewController
 
 
+
 /** 代替代理信号类 */
 @property (nonatomic, strong) RACSubject *delegateSignal;
 
