@@ -90,7 +90,6 @@
     self.sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.sendButton setTitle:@"发送验证码" forState:UIControlStateNormal];
     
-    
     // 点击事件
     [[self.sendButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         
